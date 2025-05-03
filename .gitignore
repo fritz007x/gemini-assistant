@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+package-lock.json
+
+# Build output
+dist/
+build/
+*.bundle.js
+*.bundle.js.map
+
+# IDE and editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.vs/
+.code-workspace
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Environment and secrets
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+secrets.json
+*.pem
+
+# Chrome extension specific
+*.crx
+*.pem
+*.zip
+
+# Temporary files
+tmp/
+temp/
+.cache/
+.tmp/

@@ -1,0 +1,326 @@
+/* Popup styles for Gemini Assistant */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.container {
+  width: 380px;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #4285f4;
+  color: white;
+}
+
+header h1 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.settings-toggle {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.tabs {
+  display: flex;
+  background-color: #f1f3f4;
+  border-bottom: 1px solid #dadce0;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.tab.active {
+  border-bottom-color: #4285f4;
+  color: #4285f4;
+  background-color: #fff;
+}
+
+main {
+  height: calc(100% - 95px);
+  overflow: hidden;
+  position: relative;
+}
+
+.tab-content {
+  display: none;
+  height: 100%;
+  overflow: hidden;
+  padding: 16px;
+}
+
+.tab-content.active {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Chat tab styles */
+.chat-container {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 10px;
+}
+
+.welcome-message {
+  margin-bottom: 16px;
+  padding: 12px;
+  background-color: #f1f8ff;
+  border-radius: 8px;
+  border-left: 4px solid #4285f4;
+}
+
+.welcome-message h2 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.chat-message {
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  max-width: 85%;
+}
+
+.user-message {
+  background-color: #e6f2ff;
+  margin-left: auto;
+  border-bottom-right-radius: 2px;
+}
+
+.assistant-message {
+  background-color: #f1f1f1;
+  margin-right: auto;
+  border-bottom-left-radius: 2px;
+}
+
+.query-container {
+  display: flex;
+  margin-top: 10px;
+  border-top: 1px solid #dadce0;
+  padding-top: 10px;
+}
+
+#queryInput {
+  flex: 1;
+  height: 60px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  padding: 8px;
+  resize: none;
+  font-family: inherit;
+}
+
+#sendQuery {
+  width: 60px;
+  margin-left: 8px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* OCR tab styles */
+.ocr-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.ocr-controls button {
+  flex: 1;
+  padding: 8px 12px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.ocr-preview-container {
+  height: 150px;
+  border: 1px dashed #dadce0;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
+
+.ocr-preview img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.ocr-results-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ocr-results {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  overflow-y: auto;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+
+.use-text-btn {
+  align-self: flex-end;
+  padding: 6px 12px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* History tab styles */
+.history-container {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.history-item {
+  padding: 12px;
+  border-bottom: 1px solid #dadce0;
+  cursor: pointer;
+}
+
+.history-item:hover {
+  background-color: #f1f3f4;
+}
+
+.history-query {
+  font-weight: 500;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.history-timestamp {
+  font-size: 12px;
+  color: #70757a;
+}
+
+.empty-history {
+  text-align: center;
+  color: #70757a;
+  margin-top: 30px;
+}
+
+/* Settings panel styles */
+.settings-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  padding: 16px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 10;
+}
+
+.settings-panel.active {
+  transform: translateX(0);
+}
+
+.settings-panel h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: #4285f4;
+}
+
+.setting-group {
+  margin-bottom: 16px;
+}
+
+.setting-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.setting-group input[type="password"],
+.setting-group input[type="text"],
+.setting-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+}
+
+.helper-text {
+  display: block;
+  font-size: 12px;
+  color: #70757a;
+  margin-top: 4px;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox-label input {
+  margin-right: 8px;
+}
+
+.setting-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.setting-actions button {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#saveSettings {
+  background-color: #4285f4;
+  color: white;
+}
+
+#clearHistory {
+  background-color: #f1f3f4;
+  color: #333;
+}

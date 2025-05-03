@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini Assistant</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gemini Assistant</h1>
+            <div class="settings-toggle" id="settingsToggle">⚙️</div>
+        </header>
+        
+        <div class="tabs">
+            <div class="tab active" data-tab="chat">Chat</div>
+            <div class="tab" data-tab="history">History</div>
+        </div>
+        
+        <main>
+            <!-- Chat Tab -->
+            <div class="tab-content active" id="chatTab">
+                <div class="chat-container" id="chatContainer">
+                    <div class="welcome-message">
+                        <h2>Welcome to Gemini Assistant!</h2>
+                        <p>Ask me anything about the current page.</p>
+                    </div>
+                    <div id="chatMessages"></div>
+                </div>
+                
+                <div class="query-container">
+                    <textarea id="queryInput" placeholder="Ask Gemini Assistant..."></textarea>
+                    <button id="sendQuery">Send</button>
+                </div>
+            </div>
+            
+            <!-- History Tab -->
+            <div class="tab-content" id="historyTab">
+                <div id="historyContainer" class="history-container">
+                    <p class="empty-history">No history yet. Your conversations will appear here.</p>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Settings Panel -->
+        <div class="settings-panel" id="settingsPanel">
+            <h2>Settings</h2>
+            
+            <div class="setting-group">
+                <label for="apiKeyInput">Google API Key:</label>
+                <input type="password" id="apiKeyInput" placeholder="Enter your API key">
+                <span class="helper-text">Get your API key from <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a></span>
+            </div>
+            
+            <div class="setting-group">
+                <label for="modelSelect">AI Model:</label>
+                <select id="modelSelect" class="model-select">
+                    <option value="gemini-2.5-flash-preview-04-17">Gemini 2.5 Flash (Preview)</option>
+                    <option value="gemini-2.5-pro-exp-03-25">Gemini 2.5 Pro (Experimental)</option>
+                    <option value="gemini-2.0-flash">Gemini 2.0 Flash</option>
+                    <option value="gemma-3-27b-it">Gemma 3 27B</option>
+                    <option value="gemini-2.0-pro-exp-02-05">Gemini 2.0 Pro (Experimental)</option>
+                </select>
+                <span class="helper-text">Select the AI model to use for queries</span>
+            </div>
+            
+            <div class="setting-actions">
+                <button id="saveSettings">Save Settings</button>
+                <button id="clearHistory">Clear History</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>

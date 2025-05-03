@@ -1,0 +1,19 @@
+{
+  "name": "gemini-assistant-extension",
+  "version": "1.0.0",
+  "description": "Chrome extension that integrates Google Gemini as an assistant",
+  "main": "background.js",
+  "dependencies": {},
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.1",
+    "babel-loader": "^10.0.0",
+    "webpack": "^5.99.7",
+    "webpack-cli": "^6.0.1"
+  }
+}
